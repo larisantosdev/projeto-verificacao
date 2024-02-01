@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,33 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-image: url('https://i.pinimg.com/236x/46/cc/56/46cc56dbf1e4ff857d2d29af0f937b79.jpg');
+            background-position: center center;
+            background-size: cover;
         }
 
         h1{
             display: flex;
             justify-content: center;
-            margin-bottom: 50px;
+            color: #ffffff;
+            margin-bottom: 30px;
         }
 
         form {
-            max-width: 400px;
+            max-width: 800px;
             margin: 0 auto;
+
+            padding: 40px;
+
+            border-radius: 20px;
+           
+            background-color: #e5e5e5;
         }
 
         label {
@@ -27,9 +42,16 @@
         }
 
         input {
-            width: 100%;
+            width: 90%;
             padding: 8px;
             margin-bottom: 10px;
+        }
+
+        .position {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
         }
 
         button {
@@ -40,11 +62,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            width: 35%;
+            height: 100px;
+
+            border-radius: 20px;
+            background-color: #e5e5e5;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Verificação de Sapata</h1>
+    <h1>Armazenamento de dados - Sapata</h1>
 
     <form id="sapataForm">
         <label for="codigoVeiculo">Código do Veículo:</label>
@@ -59,10 +93,18 @@
         <label for="medidaSapata">Medida da Sapata (mm):</label>
         <input type="text" id="medidaSapata" required>
 
-        <button type="button" onclick="verificarESalvar()">Salvar Informação</button>
-    </form>
+        <div class="position">
+            <button type="button" onclick="verificarESalvar()">Salvar Informação</button>
+        </form>
+        </div>
+
+       
 
     <p id="resultado"></p>
+
+    <div class="banner">
+        <img src="" alt="">
+    </div>
 
     <script>
         function verificarESalvar() {
