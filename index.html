@@ -114,11 +114,11 @@
             const medidaSapata = parseFloat(document.getElementById("medidaSapata").value);
 
             if (medidaSapata >= 10 && medidaSapata < 18) {
-                document.getElementById("resultado").innerHTML = `Urgencia na troca! Medida: ${medidaSapata}mm`;
+                document.getElementById("resultado").innerHTML = `Urgência na troca! Medida: ${medidaSapata}mm`;
             } else if (medidaSapata >= 18 && medidaSapata < 33) {
                 document.getElementById("resultado").innerHTML = `Bom estado de sapata! Medida: ${medidaSapata}mm`;
             } else {
-                document.getElementById("resultado").innerHTML = `Medida fora da faixa aceitavel.`;
+                document.getElementById("resultado").innerHTML = `A medida ${medidaSapata} está fora da faixa aceitavel.`;
             }
 
             // Validar e verificar a sapata (você pode manter a lógica existente aqui se necessário)
