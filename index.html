@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Sapata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Verificação de Sapata</h1>
+
+    <form id="sapataForm">
+        <label for="codigoVeiculo">Código do Veículo:</label>
+        <input type="text" id="codigoVeiculo" required>
+
+        <label for="dataPreventiva">Data da Preventiva (dd/mm/aaaa):</label>
+        <input type="text" id="dataPreventiva" placeholder="dd/mm/aaaa" required>
+
+        <label for="numeroSapata">Número da Sapata:</label>
+        <input type="text" id="numeroSapata" required>
+
+        <label for="medidaSapata">Medida da Sapata (mm):</label>
+        <input type="text" id="medidaSapata" required>
+
+        <button type="button" onclick="verificarESalvar()">Salvar Informação</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarESalvar() {
+            const codigoVeiculo = document.getElementById("codigoVeiculo").value;
+            const dataPreventiva = document.getElementById("dataPreventiva").value;
+            const numeroSapata = document.getElementById("numeroSapata").value;
+            const medidaSapata = parseFloat(document.getElementById("medidaSapata").value);
+
+            if (medidaSapata >= 10 && medidaSapata < 18) {
+                document.getElementById("resultado").innerHTML = `Urgencia na troca! Medida: ${medidaSapata}mm`;
+            } else if (medidaSapata >= 18 && medidaSapata < 33) {
+                document.getElementById("resultado").innerHTML = `Bom estado de sapata! Medida: ${medidaSapata}mm`;
+            } else {
+                document.getElementById("resultado").innerHTML = `Medida fora da faixa aceitavel.`;
+            }
+
+            // Validar e verificar a sapata (você pode manter a lógica existente aqui se necessário)
+
+        }
+    </script>
+
+</body>
+</html>
